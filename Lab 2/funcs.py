@@ -81,3 +81,20 @@ def SelectionSort(array,start,end):
         array[i]=array[min_index]
         array[min_index]=temp
     return array 
+def hybridmergesort(array,start,end):
+    Thershold=10
+    if (end-start+1)<=Thershold:
+        InsertionSort(array, start, end)
+    else:
+        
+        mid=(start+end)//2
+            
+        merge_sort(array,start,mid) 
+        merge_sort(array,mid+1,end)
+        array= merge(array,start,mid,end)
+    return array
+def ShuffleArray(array, start, end):
+    sub_array = array[start:end+1]
+    rand.shuffle(sub_array)
+    array[start:end+1] = sub_array
+    return array
