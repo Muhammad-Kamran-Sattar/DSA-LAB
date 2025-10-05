@@ -9,17 +9,14 @@ def RandomArray(n):
         array.append(r)
         
     return array
-def InsertionSort(array,start,end):
-    
-
-    for i in range(start,end):
-        key=array[i]
-        j=i-1
-        while j>=start and array[j] > key:
-            array[j+1] =array[j]
-            j=j-1
-        array[j+1]=key 
-        
+def InsertionSort(array, start, end):
+    for i in range(start+1, end+1):   # loop from start+1 to end
+        key = array[i]
+        j = i - 1
+        while j >= start and array[j] > key:
+            array[j+1] = array[j]
+            j -= 1
+        array[j+1] = key
     return array
 def merge(array,start,mid,end):
     left = array[start:mid+1]
@@ -59,7 +56,7 @@ def merge_sort(array,start,end):
        array= merge(array,start,mid,end)
     return array
 def BubbleSort(array,start,end):
-    for i in range(start,end):
+    for i in range(start+1,end+1):
         swapped=False
         for j in range(0,end-i-2):
             if array[j]>array[j+1]:
@@ -71,7 +68,7 @@ def BubbleSort(array,start,end):
             break
     return array
 def SelectionSort(array,start,end):
-    for i in range(start,end):
+    for i in range(start+1,end+1):
         min_index=i
         for j  in range( i+1,end):
             if array[j]<array[min_index]:

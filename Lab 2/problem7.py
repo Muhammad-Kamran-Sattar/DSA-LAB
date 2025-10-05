@@ -15,8 +15,10 @@ for n in n_values:
     # Insertion Sort
     a = arr.copy()
     start = time.time()
-    InsertionSort(a, 0, n-1)    # check if your funcs.py expects 0,n-1
+    InsertionSort(a, 0, n-1) 
+    print("hi")   #check apnai liya
     end = time.time()
+
     row.append(round(end - start, 6))
 
     # Merge Sort
